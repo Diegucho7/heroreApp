@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Publisher, Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { first, switchMap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-new-page',
@@ -35,7 +36,8 @@ export class NewPageComponent implements OnInit{
   constructor(
     private heroService : HeroesService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
     ){}
    
   get currentHero(): Hero{
@@ -80,6 +82,12 @@ export class NewPageComponent implements OnInit{
       // TODO: nostar snackbar y navegar a /heroes/edit/ hero.id
      });
 
+  }
+
+  showSnackbar(message: string):void{
+    this.snackbar.open(message, 'done',{
+      duration:2500,
+    })
   }
 
 }
