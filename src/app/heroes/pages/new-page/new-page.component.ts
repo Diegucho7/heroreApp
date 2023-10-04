@@ -5,6 +5,8 @@ import { Publisher, Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { first, switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-new-page',
@@ -37,7 +39,8 @@ export class NewPageComponent implements OnInit{
     private heroService : HeroesService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private dialog: MatDialog
     ){}
    
   get currentHero(): Hero{
@@ -73,14 +76,34 @@ export class NewPageComponent implements OnInit{
     if (this.currentHero.id){
       this.heroService.updateHero(this.currentHero)
       .subscribe(hero => {
-        // TODO: mostrar snackbar
+        this.showSnackbar(`${hero.superhero} update!`);
       });
       return;
     }
      this.heroService.addHero(this.currentHero)
      .subscribe(hero => {
       // TODO: nostar snackbar y navegar a /heroes/edit/ hero.id
+      this.router.navigate(['/heroes/edit',hero.id]);
+      this.showSnackbar(`${hero.superhero} create!`);
+
      });
+
+  }
+
+
+  onDeleteHero(){
+    if( !this.currentHero.id ) throw Error('Here id is require');
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: this.heroForm.value,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(!result) return;
+      this.heroService.deleteHeroById(this.currentHero.id);
+      this.router.navigate(['/heroes'])
+
+    });
 
   }
 
