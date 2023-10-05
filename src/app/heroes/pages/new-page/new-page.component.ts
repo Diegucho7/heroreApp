@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Publisher, Hero } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
-import { first, switchMap } from 'rxjs';
+import { filter, first, switchMap, tap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
@@ -98,12 +98,30 @@ export class NewPageComponent implements OnInit{
       data: this.heroForm.value,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if(!result) return;
-      this.heroService.deleteHeroById(this.currentHero.id);
-      this.router.navigate(['/heroes'])
+   
+    dialogRef.afterClosed()
+    .pipe(
+      filter((result: boolean) => result === true),
+      switchMap(( )=>  this.heroService.deleteHeroById(this.currentHero.id) ),
+      filter((wasDeleted:boolean)=> wasDeleted),
+     
+    )
+    .subscribe(() => {
+      
+      this.router.navigate(['/heroes']);
+   
+     })
 
-    });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if(!result) return;
+    //   this.heroService.deleteHeroById(this.currentHero.id)
+    //   .subscribe( wasDeleted =>{
+    //     if (wasDeleted)
+    //       this.router.navigate(['/heroes']);
+    //   })
+      
+    // });
 
   }
 
