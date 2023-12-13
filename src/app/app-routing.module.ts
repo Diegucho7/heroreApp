@@ -12,7 +12,7 @@ const routes: Routes = [
     canActivate: [ PublicGuard ],
     canMatch: [ PublicGuard ]},
   {
-    path: 'heroes',
+    path: 'alumnos',
     loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesModule ),
     canActivate: [canActivateGuard], //Anclamos la función del canActive
     canMatch: [canMatchGuard], //Anclamos la función del canMatch
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo: 'heroes',
+    redirectTo: 'alumnos',
     pathMatch: 'full'
   },
   {

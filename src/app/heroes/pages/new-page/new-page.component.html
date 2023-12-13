@@ -1,6 +1,6 @@
 <h1>
     {{ currentHero.id ? 'Editar' : 'Agregar'}}
-    héroe
+    Alumno
     <small *ngIf="currentHero.id">{{currentHero.superhero}}</small>
 </h1>
 <mat-divider class="mb-2">
@@ -10,8 +10,20 @@
         <mat-card>
             <mat-card-content>
                 <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+                  
+                    <mat-form-field class="col-12">
+                        <mat-label>Cédula</mat-label>
+                        <input
+                        matInput
+                        type="text"
+                        required
+                        formControlName="cedula"
+                        />
+
+                    </mat-form-field>
+                  
                     <mat-form-field class="col-12 sm:col-6">
-                        <mat-label>Super Héroe</mat-label>
+                        <mat-label>Nombre</mat-label>
                         <input
                         matInput
                         type="text"
@@ -22,7 +34,7 @@
                     </mat-form-field>
                    
                     <mat-form-field class="col-12 sm:col-6">
-                        <mat-label>Alter ego</mat-label>
+                        <mat-label>Apellido</mat-label>
                         <input
                         matInput
                         type="text"
@@ -33,17 +45,27 @@
                     </mat-form-field>
 
                     <mat-form-field class="col-12">
-                        <mat-label>Primera aparición</mat-label>
+                        <mat-label>Fecha de inscripción</mat-label>
                         <input
                         matInput
-                        type="text"
+                        type="date"
                         required
                         formControlName="first_appearance"
                         />
 
                     </mat-form-field>
+
+<!-- 
+                    <mat-form-field>
+                        <mat-label>Fecha de inscripción</mat-label>
+                        <input [matDatepicker]="picker">
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field> -->
+
+
+
                     <mat-form-field class="col-12">
-                        <mat-label>Personajes</mat-label>
+                        <mat-label>Modulo</mat-label>
                         <input
                         matInput
                         type="text"
@@ -53,7 +75,7 @@
 
                     </mat-form-field>
                     <mat-form-field class="col-12">
-                        <mat-label>Creador</mat-label>
+                        <mat-label>Academia</mat-label>
                         <mat-select
                         formControlName="publisher" 
                         required>

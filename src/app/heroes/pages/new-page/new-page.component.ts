@@ -20,6 +20,7 @@ export class NewPageComponent implements OnInit{
   public heroForm = new FormGroup({
 
     id: new FormControl<string>(''),        
+    cedula: new FormControl<string>(''),      
     superhero: new FormControl<string>('', {nonNullable:true }),      
     publisher: new FormControl<Publisher>(Publisher.DCComics),      
     alter_ego: new FormControl(''),     
@@ -31,8 +32,10 @@ export class NewPageComponent implements OnInit{
 
 
   public publishers = [
-    {id: 'DC Comics', desc: 'DC - Comics'},
-    {id: 'Marvel Comics', desc: 'Marvel - Comics'}
+    {id: 'EGA - ACADEMY', desc: 'EGA - ACADEMY'},
+    {id: 'ESDA', desc: 'ESDA'},
+    {id: 'KENNEDY', desc: 'KENNEDY'},
+    {id: 'ACADEMIA CEC', desc: 'ACADEMIA CEC'}
   ];
 
   constructor(
@@ -83,7 +86,7 @@ export class NewPageComponent implements OnInit{
      this.heroService.addHero(this.currentHero)
      .subscribe(hero => {
       // TODO: nostar snackbar y navegar a /heroes/edit/ hero.id
-      this.router.navigate(['/heroes/edit',hero.id]);
+      this.router.navigate(['/alumnos/edit',hero.id]);
       this.showSnackbar(`${hero.superhero} create!`);
 
      });
