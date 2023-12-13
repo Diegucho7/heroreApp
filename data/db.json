@@ -66,6 +66,26 @@
       "first_appearance": "2022-03-23",
       "characters": "Agricultura",
       "alt_img": ""
+    },
+    {
+      "id": "06SnIap",
+      "cedula": "alumno8",
+      "superhero": "Miranda ",
+      "publisher": "ESDA",
+      "alter_ego": "Mora",
+      "first_appearance": "2022-03-23",
+      "characters": "Fotografía",
+      "alt_img": ""
+    },
+    {
+      "id": "DrR2JHT",
+      "cedula": "alumno12",
+      "superhero": "andres",
+      "publisher": "EGA - ACADEMY",
+      "alter_ego": "crespo",
+      "first_appearance": "2023-03-02",
+      "characters": "fotografía",
+      "alt_img": ""
     }
   ]
 }

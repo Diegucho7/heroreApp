@@ -133,5 +133,8 @@ export class NewPageComponent implements OnInit{
       duration:2500,
     })
   }
+  goBack():void{
+    this.router.navigateByUrl('alumnos/list')
+  }
 
 }
