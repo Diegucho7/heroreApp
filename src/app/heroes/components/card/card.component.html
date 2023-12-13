@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>{{hero.superhero}}</mat-card-title>
-        <mat-card-subtitle>{{hero.alter_ego}}</mat-card-subtitle>
+        <mat-card-title>{{hero.superhero | uppercase}}</mat-card-title>
+        <mat-card-subtitle>{{hero.alter_ego | uppercase}}</mat-card-subtitle>
     </mat-card-header>
 
 <!-- TODO: Imagen -->
@@ -16,7 +16,7 @@
         <br>
         <mat-chip-listbox>
             <mat-chip *ngFor="let name of hero.characters.split(',') | slice:0:3">
-                {{name}}
+                {{name|uppercase}}
             </mat-chip>
         </mat-chip-listbox>
     </p>
