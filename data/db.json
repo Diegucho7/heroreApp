@@ -18,16 +18,6 @@
       "alt_img": ""
     },
     {
-      "id": "YqAPOUT",
-      "cedula": "alumno5",
-      "superhero": "Roberto",
-      "publisher": "ESDA",
-      "alter_ego": "Velazquez",
-      "first_appearance": "2023-07-12",
-      "characters": "arte",
-      "alt_img": ""
-    },
-    {
       "id": "qJblStx",
       "cedula": "alumno1",
       "superhero": "Juana",
@@ -49,8 +39,8 @@
     },
     {
       "id": "V8q9rru",
-      "cedula": "alumno4",
-      "superhero": "Andy",
+      "cedula": "alumno10",
+      "superhero": "Adriana",
       "publisher": "ESDA",
       "alter_ego": "Barriga",
       "first_appearance": "2022-07-21",
@@ -68,22 +58,22 @@
       "alt_img": ""
     },
     {
-      "id": "06SnIap",
-      "cedula": "alumno8",
-      "superhero": "Miranda ",
-      "publisher": "ESDA",
-      "alter_ego": "Mora",
-      "first_appearance": "2022-03-23",
-      "characters": "Fotografía",
-      "alt_img": ""
-    },
-    {
       "id": "DrR2JHT",
       "cedula": "alumno12",
       "superhero": "andres",
       "publisher": "EGA - ACADEMY",
       "alter_ego": "crespo",
       "first_appearance": "2023-03-02",
+      "characters": "fotografía",
+      "alt_img": ""
+    },
+    {
+      "id": "Z3QzJlh",
+      "cedula": "alumno19",
+      "superhero": "rodrigo",
+      "publisher": "ACADEMIA CEC",
+      "alter_ego": "gutierrez",
+      "first_appearance": "2022-02-12",
       "characters": "fotografía",
       "alt_img": ""
     }

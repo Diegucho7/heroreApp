@@ -111,7 +111,7 @@ export class NewPageComponent implements OnInit{
     )
     .subscribe(() => {
       
-      this.router.navigate(['/heroes']);
+      this.router.navigate(['/alumnos']);
    
      })
 

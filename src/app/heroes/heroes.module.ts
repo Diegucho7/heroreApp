@@ -12,6 +12,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     CardComponent,
     HeroImagePipe,
     ConfirmDialogComponent,
+    InicioComponent,
     
     
   ],
