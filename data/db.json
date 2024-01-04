@@ -9,7 +9,7 @@
   "heroes": [
     {
       "id": "Nmh_pCt",
-      "cedula": "alumno2",
+      "cedula": "alumno20",
       "superhero": "Carlos",
       "publisher": "ESDA",
       "alter_ego": "Zambrano",
@@ -64,16 +64,6 @@
       "publisher": "EGA - ACADEMY",
       "alter_ego": "crespo",
       "first_appearance": "2023-03-02",
-      "characters": "fotografía",
-      "alt_img": ""
-    },
-    {
-      "id": "Z3QzJlh",
-      "cedula": "alumno19",
-      "superhero": "rodrigo",
-      "publisher": "ACADEMIA CEC",
-      "alter_ego": "gutierrez",
-      "first_appearance": "2022-02-12",
       "characters": "fotografía",
       "alt_img": ""
     }
